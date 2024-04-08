@@ -50,12 +50,6 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
-.app {
-	width: 100%;
-	height: 100%;
-	background: #000;
-}
-
 
 * {
 	margin: 0;
@@ -219,12 +213,12 @@ html, body {
 	 mask-position: 100% 0;
 	}
  
-	to {
+to {
 	 -webkit-mask-position: 0 0;
 	 mask-position: 0 0;
 	}
- }
+}
  
- a{
+a{
 	 color:#00ff95;
- }
+}
