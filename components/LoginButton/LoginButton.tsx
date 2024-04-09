@@ -1,6 +1,6 @@
 'use client'
 
-import { generateRandomUser } from '../../common/utils/loginUtils'
+import { generateRandomUser } from '../../common/utils/generateRandomUser.util'
 import styles from './LoginButton.module.scss'
 
 const LoginButton = () => {
@@ -10,9 +10,7 @@ const LoginButton = () => {
 		localStorage.setItem('user', JSON.stringify(randomUser))
 	}
 	
-	return (
-		<button className={styles.button} onClick={() => handleGenerate()}>Start chating</button>
-	)
+	return <button className={styles.button} onClick={() => handleGenerate()}>Start chating</button>
 }
 
 export default LoginButton
