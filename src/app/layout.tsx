@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.scss";
-import { ChatContextProvider } from "../../common/context/chatContext";
-
 const inter = Inter({ subsets: ["latin"] });
+import '../styles/globals.scss';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,9 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-				<ChatContextProvider>
 					{children}
-				</ChatContextProvider>
 			</body>
     </html>
   );
