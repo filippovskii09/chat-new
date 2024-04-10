@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import '../styles/globals.scss';
+import { LoginContextProvider } from "../../common/context/loginContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+				<LoginContextProvider>
 					{children}
+				</LoginContextProvider>
 			</body>
     </html>
   );
