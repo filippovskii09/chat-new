@@ -1,10 +1,15 @@
 'use client'
 
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './ChatMessages.module.scss'
-import { MessageType } from '../../common/hooks/useCreateMessage.hook'
+import { MessageType, UserType } from '../../common/hooks/useCreateMessage.hook'
 
-const ChatMessages = ({messages, user}: any) => {
+interface Props {
+	messages: MessageType[],
+	user: UserType
+}
+
+const ChatMessages: FC<Props> = ({ messages, user }) => {
 	
 	return (
 		<ul className={styles.list}>

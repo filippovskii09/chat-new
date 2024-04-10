@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-type User = {
+export type UserType = {
 	id: string,
 	name: string
 }
@@ -18,7 +18,7 @@ const useCreateMessage = () => {
 	const [messageText, setMessageText] = useState<string>("")
 	const [messages, setMessages] = useState<MessageType[]>([])
 
-	let user: User | null = null
+	let user: UserType | null = null
 	const userString = sessionStorage.getItem('user')
 	if(userString) {
 		user = JSON.parse(userString)
@@ -38,7 +38,7 @@ const useCreateMessage = () => {
 
 		localStorage.setItem('messages', JSON.stringify(updatedMessages));
 	}
-	
+
 	return { sentMessage, setMessages, messages, user, setMessageText, messageText }
 }
 

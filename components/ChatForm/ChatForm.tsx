@@ -1,12 +1,17 @@
 'use client'
 
 import { IoSend } from "react-icons/io5";
-import React, { FormEvent } from 'react'
+import React, { Dispatch, FC, FormEvent, SetStateAction } from 'react'
 import useCreateMessage from "../../common/hooks/useCreateMessage.hook";
 import styles from './ChatForm.module.scss'
 
-const ChatForm = ({sentMessage, setMessageText, messageText}: any) => {
+interface Props {
+	sentMessage: () => void,
+	setMessageText: Dispatch<SetStateAction<string>>,
+	messageText: string
+}
 
+const ChatForm: FC<Props> = ({sentMessage, setMessageText, messageText}) => {
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
